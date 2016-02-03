@@ -47,11 +47,11 @@ def plotSolutions(x,phi,exact):
    print "%s DONE!!" % (pltFile)
 
 
-def writeCSV(x,phi):
+def writeCSV(x,phi,exact):
    print '# Writing a csv file to store data...'
    csvFile = 'dataOut.csv'
    c = csv.writer(open(csvFile, "wb"))
    c.writerow(["#","x","solution"])
-   dataLength = min(len(x), len(phi))
+   dataLength = min(len(x), len(phi), len(exact))
    for n in range(dataLength):
-      c.writerow([x[n], phi[n]])
+      c.writerow([x[n], phi[n], exact[n]])

@@ -15,10 +15,10 @@ start = time.clock()
 ##
 
 # maximum iterations
-nIters = 20
+nIters = 10
 
 # grid: i,j,k resolution
-iDim = 10
+iDim = 20
 jDim = 1
 kDim = 1
 # x: spatial dimension of cube
@@ -39,7 +39,7 @@ x, dx = updateGrid(x, xmin, xmax, iDim)
 # Gamma: diffusion coefficient
 gamma = 0.1*np.ones((iDim))
 # phi vector on every grid nodes
-#phi = np.zeros((iDim, nDepVars))
+# solution space is initizlied with zeros for every elements.
 phi = np.zeros((iDim))
 # to store analytical solution
 phiExact = np.zeros((iDim))
@@ -74,5 +74,5 @@ print "## Elapsed time: ", elapsed
 plotSolutions(x, phi, exact)
 
 # store data in plain text with csv file format
-writeCSV(x,phi)
+writeCSV(x,phi,exact)
 
