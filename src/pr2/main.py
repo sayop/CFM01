@@ -4,6 +4,9 @@ import numpy as np
 import time
 sys.path.append('./functions')
 from grid import *
+from numericalMethods import *
+from exactSol import *
+from post import *
 
 start = time.clock()
 ##
@@ -11,16 +14,20 @@ start = time.clock()
 ##
 
 # maximum iterations
-nIters = 2
+nIters = 1000
+# if residual rate comes below this criterion, the iteration will stop!
+convergeCrit = 0.001
 
 # grid: i,j resolution
-iDim = 5
-jDim = 5
+iDim = 10
+jDim = 10
 # x, y: spatial dimension of N^2 nodes
 xmin = 0.0
 xmax = 1.0
 ymin = 0.0
 ymax = 1.0
+# Relaxation coefficient for SOR: applies to Jacobi and Gauss-Seidel
+relaxCoeff = 1.0
 # grid coordinates: Structured
 x = np.zeros((iDim))
 y = np.zeros((jDim))
@@ -33,10 +40,33 @@ Twall = 0.0
 # diffusion coefficient: lambda is held constant as one
 thermDiffusivity = np.ones((iDim,jDim))
 # Source Term matrix: Q{ixj}
-Sources = np.zeros((iDim,jDim))
+Sources = np.ones((iDim,jDim))
 
-for niter in range(nIters)
-   print '------------------------------------------------'
-   print '| Iters # = ', niter
+for niter in range(nIters):
 
-   # i-sweep
+   #compute residual at initial state
+   if niter == 0: residualInit = computeResidual(T, Sources, thermDiffusivity, iDim, jDim, dx, dy)
+   # go for point-iterations: will update new time level
+   newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   # compute residual for updated solution
+   residual = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
+   # check convergence rate:
+   convergenceRate = residual / residualInit
+   print '| Convergence rate: ', convergenceRate
+   if convergenceRate <= convergeCrit: 
+      print '| CONVERGED SUCCESSFULLY at', convergenceRate, '!!!!'
+      break
+   
+   # update T
+   T = newT
+   #print T
+   print '| Iters # = ', niter, 'Done!!'
+
+# exacsolution space
+exacT = findExactSolution(x, y, iDim, jDim)
+print "Exact solution:"
+#print exacT
+
+plotContour(x, y, T, 'prob2_NumericalTemperature.png')
+plotContour(x, y, exacT, 'prob2_ExactTemperature.png')
+#writeCSV(x, y, T, exacT, 0.5)
