@@ -51,7 +51,7 @@ def writeCSV(x,phi,exact):
    print '# Writing a csv file to store data...'
    csvFile = 'dataOut.csv'
    c = csv.writer(open(csvFile, "wb"))
-   c.writerow(["#","x","solution"])
+   c.writerow(["#","x","Numerical sol","Exact sol"])
    dataLength = min(len(x), len(phi), len(exact))
    for n in range(dataLength):
       c.writerow([x[n], phi[n], exact[n]])

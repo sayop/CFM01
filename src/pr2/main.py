@@ -14,7 +14,7 @@ start = time.clock()
 ##
 
 # maximum iterations
-nIters = 1000
+nIters = 10
 # if residual rate comes below this criterion, the iteration will stop!
 convergeCrit = 0.001
 

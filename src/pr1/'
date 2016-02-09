@@ -17,11 +17,11 @@ start = time.clock()
 # maximum iterations
 # For problem1-b, set nIters to 1
 # For poroble1-c, set nIters big enough to run until it converge
-nIters = 50
+nIters = 3
 
 
 # grid: i,j,k resolution
-iDim = 20
+iDim = 5
 jDim = 1
 kDim = 1
 # x: spatial dimension of cube
@@ -51,8 +51,8 @@ phiExact = np.zeros((iDim))
 
 # source terms
 #Q = 0.0*np.ones((iDim))
-Q = 0.1*np.ones((iDim))
-#Q = 0.1 * x
+#Q = 0.1*np.ones((iDim))
+Q = 0.1 * x
 
 
 # Iteration loop:
@@ -77,14 +77,10 @@ for niter in range(nIters):
    residual = findResidual(A, Q, phi, x, iDim, niter)
    if niter == 0:
       residualInit = residual
-      residual = 1.0
    else:
       residual = residual / residualInit
 
-   print '## Residual=', residual
-   if residual <= 1.0e-3:
-      print "## Solution has been converged!!!!"
-      break
+   print '## Residual=', residual, residualInit
    # Solve the systen of algebraic equations using TDMA method
    phi = solveEquations(A,iDim,Q)
 
@@ -94,9 +90,9 @@ for niter in range(nIters):
 # exact solution for pr1-c: Q=0.0
 #exact = findExactSolution2(x,iDim)
 # exact solution for pr1-c: Q=0.1
-exact = findExactSolution3(x,iDim)
+#exact = findExactSolution3(x,iDim)
 # exact solution for pr1-c: Q=0.1x
-#exact = findExactSolution4(x,iDim)
+exact = findExactSolution4(x,iDim)
 
 # return average error: the error is defined as RMS of 
 # deviation of numerical solution from exact solution 
