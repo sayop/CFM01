@@ -6,15 +6,16 @@ Problem 2 - c
 
 - CASE1: Jacobi method
 
+  (a) Temperature contour
 
-  +-------------------------------------------------------+---------------------------------------------------+
-  |  Temperature contour                                  |  Temperature along the center line                |
-  +-------------------------------------------------------+---------------------------------------------------+
-  |                                                       |                                                   |
-  |  .. figure:: ./images/prob2_NumericalJacobi.png       |  .. figure:: ./images/solutions_Jacobi.png        |
-  |     :scale: 20%                                       |     :scale: 20%                                   |
-  |                                                       |                                                   |
-  +-------------------------------------------------------+---------------------------------------------------+
+    .. figure:: ./images/prob2_NumericalJacobi.png
+       :scale: 80%
+
+  (b) Temperature along the center line
+
+    .. figure:: ./images/solutions_Jacobi.png
+       :scale: 60%
+  
 
   - discussions: blahblah
   - discussions: blah blah
@@ -25,14 +26,15 @@ Problem 2 - c
 - CASE2: Gauss-Seidel method
 
 
-  +-------------------------------------------------------+---------------------------------------------------+
-  |  Temperature contour                                  |  Temperature along the center line                |
-  +-------------------------------------------------------+---------------------------------------------------+
-  |                                                       |                                                   |
-  |  .. figure:: ./images/prob2_NumericalGS.png           |  .. figure:: ./images/solutions_GS.png            |
-  |     :scale: 20%                                       |     :scale: 20%                                   |
-  |                                                       |                                                   |
-  +-------------------------------------------------------+---------------------------------------------------+
+  (a) Temperature contour
+
+    .. figure:: ./images/prob2_NumericalGS.png
+       :scale: 80%
+
+  (b) Temperature along the center line
+
+    .. figure:: ./images/solutions_GS.png
+       :scale: 60%
 
 
 |
