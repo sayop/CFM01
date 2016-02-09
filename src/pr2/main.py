@@ -50,8 +50,8 @@ for niter in range(nIters):
    # go for point-iterations: will update new time level
    # first one runs for Jacobi method with relaxation coefficient.
    # second one runs for Jacobi method with relaxation coefficient.
-   newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
-   #newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   #newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
    # compute residual for updated solution
    residual = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
    # check convergence rate:

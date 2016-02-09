@@ -6,19 +6,33 @@ Problem 2 - c
 
 - CASE1: Jacobi method
 
+
   +-------------------------------------------------------+---------------------------------------------------+
-  |  **Numerical solution**                               |  **Exact solution**                               |
+  |  Temperature contour                                  |  Temperature along the center line                |
   +-------------------------------------------------------+---------------------------------------------------+
   |                                                       |                                                   |
-  |  .. figure:: ./images/prob2_NumericalTemperature.png  |  .. figure:: ./images/prob2_ExactTemperature.png  |
-  |     :scale: 80%                                       |     :scale: 80%                                   |
+  |  .. figure:: ./images/prob2_NumericalJacobi.png       |  .. figure:: ./images/solutions_Jacobi.png        |
+  |     :scale: 70%                                       |     :scale: 60%                                   |
   |                                                       |                                                   |
   +-------------------------------------------------------+---------------------------------------------------+
 
+  - discussions: blahblah
+  - discussions: blah blah
+
+  
 |
 
 - CASE2: Gauss-Seidel method
 
+
+  +-------------------------------------------------------+---------------------------------------------------+
+  |  Temperature contour                                  |  Temperature along the center line                |
+  +-------------------------------------------------------+---------------------------------------------------+
+  |                                                       |                                                   |
+  |  .. figure:: ./images/prob2_NumericalGS.png           |  .. figure:: ./images/solutions_GS.png            |
+  |     :scale: 70%                                       |     :scale: 60%                                   |
+  |                                                       |                                                   |
+  +-------------------------------------------------------+---------------------------------------------------+
 
 
 |
