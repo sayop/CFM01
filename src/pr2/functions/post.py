@@ -29,27 +29,53 @@ def plotContour(x,y,phi,pltFile):
    print "%s DONE!!" % (pltFile)
    plt.show()
 
-def writeCSV(x,y,phi,exact,yLoc):
+def writeCSV(x,y,dx,dy,phi,exact,yLoc):
    print '# Writing a csv file to store line data in x-direction'
    csvFile = 'dataOut.csv'
    c = csv.writer(open(csvFile, "wb"))
-   c.writerow(["#","x","solution","exactSolution"])
+   c.writerow(["x","solution","exactSolution"])
 
+   imax = len(x)
    jmax = len(y)
-   for j in range(jmax-1):
-      if (y[j] <= yLoc) and (y[j+1] > yLoc):
-         jL = j
-         jR = j + 1
-         distL = yLoc - y[jL]
-         distR = y[jR] - yLoc
-      else:
-         continue
+   phiIDW = []
+   exactIDW = []
+   diagonal = np.sqrt(dx **2 + dy ** 2)
+   # inverse distance weighting
+   p = 2
+   for n in range(imax):
+      tmp1 = 0.0
+      tmp2 = 0.0
+      tmp3 = 0.0
+      xMeas = x[n]
+      yMeas = yLoc
+      for j in range(jmax):
+         for i in range(imax):
+            dist = np.sqrt( (xMeas - x[i]) ** 2 +
+                            (yMeas - y[j]) ** 2 )
+            dist = max(1e-9,dist)
+            
+            if dist > 0.5*diagonal:
+               continue
+            else:
+               wi = 1.0 / dist ** p
+               tmp1 += wi
+               tmp2 += wi * phi[i][j]
+               tmp3 += wi * exact[i][j]
 
-   phiMid = []
-   exacMid = []
-   for i in range(len(x)):
-      phiMid.append( phi[i][jL] + phi[i][jR] * distL / (distL + distR) )
-      exacMid.append( exact[i][jL] + exact[i][jR] * distL / (distL + distR) )
-   dataLength = min(len(x), len(phiMid), len(exacMid))
+      phiIDW.append(tmp2/tmp1)
+      exactIDW.append(tmp3/tmp1)
+            
+   dataLength = len(x)
    for n in range(dataLength):
-      c.writerow([x[n], phiMid[n], exacMid[n]])
+      c.writerow([x[n], phiIDW[n], exactIDW[n]])
+
+
+def writeConvergenceTrace(residual):
+   ndata = len(residual)
+   print '# Writing convergence rate trace...'
+   csvFile = 'convergenceRate.csv'
+   c = csv.writer(open(csvFile, "wb"))
+   c.writerow(["iter","converge"])
+
+   for n in range(ndata):
+      c.writerow([n+1,residual[n]])

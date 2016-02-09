@@ -30,6 +30,7 @@ Given conditions: :math:`U` = 1, :math:`\Gamma` = 0.1, and :math:`Q` = 0. Use TD
   - blah
   - blah
 
+|
 
 (2) **Plot** the average error as a function of :math:`N` in a log scale and normalization with respect to grid size. 
 
@@ -41,3 +42,11 @@ Given conditions: :math:`U` = 1, :math:`\Gamma` = 0.1, and :math:`Q` = 0. Use TD
   - blah
   - blah
   - blah
+
+|
+
+(3) **Examine** how the calculation time changes with :math:`N` and **evaluate** the time complexity of the algorithm.
+
+
+  .. figure:: ./images/computeTime.png
+     :scale: 60%

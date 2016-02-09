@@ -20,3 +20,13 @@ def findExactSolution(x, y, imax, jmax):
          exacT[i][j] = 16.0 * tmp / pi**4
                
    return exacT
+
+def findAverageError(imax, jmax, phi, exact):
+   errorRMS = 0.0
+   for j in range(jmax):
+      for i in range(imax):
+         errorRMS += (phi[i][j] - exact[i][j]) ** 2
+
+   errorRMS = np.sqrt(errorRMS) / (imax * jmax)
+
+   return errorRMS

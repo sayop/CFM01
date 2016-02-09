@@ -14,13 +14,13 @@ start = time.clock()
 ##
 
 # maximum iterations
-nIters = 10
+nIters = 99999
 # if residual rate comes below this criterion, the iteration will stop!
 convergeCrit = 0.001
 
 # grid: i,j resolution
-iDim = 10
-jDim = 10
+iDim = 40
+jDim = 40
 # x, y: spatial dimension of N^2 nodes
 xmin = 0.0
 xmax = 1.0
@@ -42,17 +42,22 @@ thermDiffusivity = np.ones((iDim,jDim))
 # Source Term matrix: Q{ixj}
 Sources = np.ones((iDim,jDim))
 
+residualTrace = []
 for niter in range(nIters):
 
    #compute residual at initial state
    if niter == 0: residualInit = computeResidual(T, Sources, thermDiffusivity, iDim, jDim, dx, dy)
    # go for point-iterations: will update new time level
+   # first one runs for Jacobi method with relaxation coefficient.
+   # second one runs for Jacobi method with relaxation coefficient.
    newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   #newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
    # compute residual for updated solution
    residual = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
    # check convergence rate:
    convergenceRate = residual / residualInit
    print '| Convergence rate: ', convergenceRate
+   residualTrace.append(convergenceRate)
    if convergenceRate <= convergeCrit: 
       print '| CONVERGED SUCCESSFULLY at', convergenceRate, '!!!!'
       break
@@ -62,11 +67,20 @@ for niter in range(nIters):
    #print T
    print '| Iters # = ', niter, 'Done!!'
 
+# time elapsed:
+elapsed = (time.clock() - start)
+print "## Elapsed time: ", elapsed
+
 # exacsolution space
 exacT = findExactSolution(x, y, iDim, jDim)
-print "Exact solution:"
-#print exacT
+
+# return average error: the error is defined as RMS of 
+# deviation of numerical solution from exact solution 
+# at every node points
+error = findAverageError(iDim, jDim, T, exacT)
+print "## Average error = ", error
 
 plotContour(x, y, T, 'prob2_NumericalTemperature.png')
 plotContour(x, y, exacT, 'prob2_ExactTemperature.png')
-#writeCSV(x, y, T, exacT, 0.5)
+writeCSV(x, y, dx, dy, T, exacT, 0.5)
+writeConvergenceTrace(residualTrace)

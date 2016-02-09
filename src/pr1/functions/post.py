@@ -10,9 +10,10 @@ def plotSolutions(x,phi,exact):
    MaxY = 1.1*max(phi)
 
    p = plt.plot(x,phi, 'k-', label='Numerical solution')
-   p = plt.plot(x,exact, 'r-', label='Analytical solution')
+   plt.setp(p, linewidth='3.0')
+   p = plt.plot(x,exact, 'r--', label='Analytical solution')
+   plt.setp(p, linewidth='3.0')
 
-   plt.setp(p, linewidth='2.0')
    plt.axis([MinX,MaxX, MinY, MaxY])
    plt.xscale('linear')
    plt.yscale('linear')
