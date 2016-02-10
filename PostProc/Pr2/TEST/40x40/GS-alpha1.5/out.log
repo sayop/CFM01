@@ -1,0 +1,694 @@
+| Convergence rate:  0.952216797611
+| Iters # =  0 Done!!
+| Convergence rate:  0.90113609691
+| Iters # =  1 Done!!
+| Convergence rate:  0.864000764494
+| Iters # =  2 Done!!
+| Convergence rate:  0.834060597106
+| Iters # =  3 Done!!
+| Convergence rate:  0.808347261559
+| Iters # =  4 Done!!
+| Convergence rate:  0.785436094696
+| Iters # =  5 Done!!
+| Convergence rate:  0.764553557375
+| Iters # =  6 Done!!
+| Convergence rate:  0.745230736033
+| Iters # =  7 Done!!
+| Convergence rate:  0.727158243507
+| Iters # =  8 Done!!
+| Convergence rate:  0.710118855789
+| Iters # =  9 Done!!
+| Convergence rate:  0.693952907048
+| Iters # =  10 Done!!
+| Convergence rate:  0.678538899168
+| Iters # =  11 Done!!
+| Convergence rate:  0.663781850514
+| Iters # =  12 Done!!
+| Convergence rate:  0.649605896155
+| Iters # =  13 Done!!
+| Convergence rate:  0.63594937406
+| Iters # =  14 Done!!
+| Convergence rate:  0.622761439847
+| Iters # =  15 Done!!
+| Convergence rate:  0.609999660969
+| Iters # =  16 Done!!
+| Convergence rate:  0.597628260675
+| Iters # =  17 Done!!
+| Convergence rate:  0.585616806162
+| Iters # =  18 Done!!
+| Convergence rate:  0.573939208537
+| Iters # =  19 Done!!
+| Convergence rate:  0.562572946888
+| Iters # =  20 Done!!
+| Convergence rate:  0.551498456886
+| Iters # =  21 Done!!
+| Convergence rate:  0.540698642564
+| Iters # =  22 Done!!
+| Convergence rate:  0.530158481893
+| Iters # =  23 Done!!
+| Convergence rate:  0.51986470496
+| Iters # =  24 Done!!
+| Convergence rate:  0.509805529119
+| Iters # =  25 Done!!
+| Convergence rate:  0.499970439427
+| Iters # =  26 Done!!
+| Convergence rate:  0.490350005503
+| Iters # =  27 Done!!
+| Convergence rate:  0.480935727936
+| Iters # =  28 Done!!
+| Convergence rate:  0.471719908913
+| Iters # =  29 Done!!
+| Convergence rate:  0.462695542827
+| Iters # =  30 Done!!
+| Convergence rate:  0.453856223472
+| Iters # =  31 Done!!
+| Convergence rate:  0.445196065107
+| Iters # =  32 Done!!
+| Convergence rate:  0.436709635143
+| Iters # =  33 Done!!
+| Convergence rate:  0.428391896632
+| Iters # =  34 Done!!
+| Convergence rate:  0.420238159037
+| Iters # =  35 Done!!
+| Convergence rate:  0.412244036032
+| Iters # =  36 Done!!
+| Convergence rate:  0.40440540926
+| Iters # =  37 Done!!
+| Convergence rate:  0.396718397203
+| Iters # =  38 Done!!
+| Convergence rate:  0.389179328422
+| Iters # =  39 Done!!
+| Convergence rate:  0.381784718573
+| Iters # =  40 Done!!
+| Convergence rate:  0.374531250647
+| Iters # =  41 Done!!
+| Convergence rate:  0.367415757982
+| Iters # =  42 Done!!
+| Convergence rate:  0.360435209614
+| Iters # =  43 Done!!
+| Convergence rate:  0.353586697625
+| Iters # =  44 Done!!
+| Convergence rate:  0.346867426173
+| Iters # =  45 Done!!
+| Convergence rate:  0.340274701949
+| Iters # =  46 Done!!
+| Convergence rate:  0.333805925838
+| Iters # =  47 Done!!
+| Convergence rate:  0.327458585603
+| Iters # =  48 Done!!
+| Convergence rate:  0.321230249436
+| Iters # =  49 Done!!
+| Convergence rate:  0.315118560259
+| Iters # =  50 Done!!
+| Convergence rate:  0.309121230653
+| Iters # =  51 Done!!
+| Convergence rate:  0.303236038347
+| Iters # =  52 Done!!
+| Convergence rate:  0.297460822168
+| Iters # =  53 Done!!
+| Convergence rate:  0.291793478412
+| Iters # =  54 Done!!
+| Convergence rate:  0.286231957576
+| Iters # =  55 Done!!
+| Convergence rate:  0.280774261395
+| Iters # =  56 Done!!
+| Convergence rate:  0.275418440168
+| Iters # =  57 Done!!
+| Convergence rate:  0.270162590317
+| Iters # =  58 Done!!
+| Convergence rate:  0.265004852171
+| Iters # =  59 Done!!
+| Convergence rate:  0.259943407937
+| Iters # =  60 Done!!
+| Convergence rate:  0.254976479842
+| Iters # =  61 Done!!
+| Convergence rate:  0.250102328431
+| Iters # =  62 Done!!
+| Convergence rate:  0.245319251
+| Iters # =  63 Done!!
+| Convergence rate:  0.24062558015
+| Iters # =  64 Done!!
+| Convergence rate:  0.236019682457
+| Iters # =  65 Done!!
+| Convergence rate:  0.231499957233
+| Iters # =  66 Done!!
+| Convergence rate:  0.227064835389
+| Iters # =  67 Done!!
+| Convergence rate:  0.222712778368
+| Iters # =  68 Done!!
+| Convergence rate:  0.218442277161
+| Iters # =  69 Done!!
+| Convergence rate:  0.214251851386
+| Iters # =  70 Done!!
+| Convergence rate:  0.210140048426
+| Iters # =  71 Done!!
+| Convergence rate:  0.206105442633
+| Iters # =  72 Done!!
+| Convergence rate:  0.202146634568
+| Iters # =  73 Done!!
+| Convergence rate:  0.198262250301
+| Iters # =  74 Done!!
+| Convergence rate:  0.194450940743
+| Iters # =  75 Done!!
+| Convergence rate:  0.190711381028
+| Iters # =  76 Done!!
+| Convergence rate:  0.187042269917
+| Iters # =  77 Done!!
+| Convergence rate:  0.183442329247
+| Iters # =  78 Done!!
+| Convergence rate:  0.179910303402
+| Iters # =  79 Done!!
+| Convergence rate:  0.176444958815
+| Iters # =  80 Done!!
+| Convergence rate:  0.173045083493
+| Iters # =  81 Done!!
+| Convergence rate:  0.169709486567
+| Iters # =  82 Done!!
+| Convergence rate:  0.166436997859
+| Iters # =  83 Done!!
+| Convergence rate:  0.163226467477
+| Iters # =  84 Done!!
+| Convergence rate:  0.160076765417
+| Iters # =  85 Done!!
+| Convergence rate:  0.156986781189
+| Iters # =  86 Done!!
+| Convergence rate:  0.153955423452
+| Iters # =  87 Done!!
+| Convergence rate:  0.150981619672
+| Iters # =  88 Done!!
+| Convergence rate:  0.148064315782
+| Iters # =  89 Done!!
+| Convergence rate:  0.14520247586
+| Iters # =  90 Done!!
+| Convergence rate:  0.142395081816
+| Iters # =  91 Done!!
+| Convergence rate:  0.139641133089
+| Iters # =  92 Done!!
+| Convergence rate:  0.136939646354
+| Iters # =  93 Done!!
+| Convergence rate:  0.134289655235
+| Iters # =  94 Done!!
+| Convergence rate:  0.131690210026
+| Iters # =  95 Done!!
+| Convergence rate:  0.129140377425
+| Iters # =  96 Done!!
+| Convergence rate:  0.126639240265
+| Iters # =  97 Done!!
+| Convergence rate:  0.124185897258
+| Iters # =  98 Done!!
+| Convergence rate:  0.121779462743
+| Iters # =  99 Done!!
+| Convergence rate:  0.11941906644
+| Iters # =  100 Done!!
+| Convergence rate:  0.117103853205
+| Iters # =  101 Done!!
+| Convergence rate:  0.114832982795
+| Iters # =  102 Done!!
+| Convergence rate:  0.112605629635
+| Iters # =  103 Done!!
+| Convergence rate:  0.110420982588
+| Iters # =  104 Done!!
+| Convergence rate:  0.108278244731
+| Iters # =  105 Done!!
+| Convergence rate:  0.106176633133
+| Iters # =  106 Done!!
+| Convergence rate:  0.104115378635
+| Iters # =  107 Done!!
+| Convergence rate:  0.102093725641
+| Iters # =  108 Done!!
+| Convergence rate:  0.100110931899
+| Iters # =  109 Done!!
+| Convergence rate:  0.0981662682991
+| Iters # =  110 Done!!
+| Convergence rate:  0.096259018663
+| Iters # =  111 Done!!
+| Convergence rate:  0.0943884795441
+| Iters # =  112 Done!!
+| Convergence rate:  0.0925539600258
+| Iters # =  113 Done!!
+| Convergence rate:  0.0907547815246
+| Iters # =  114 Done!!
+| Convergence rate:  0.0889902775946
+| Iters # =  115 Done!!
+| Convergence rate:  0.0872597937353
+| Iters # =  116 Done!!
+| Convergence rate:  0.0855626872013
+| Iters # =  117 Done!!
+| Convergence rate:  0.0838983268146
+| Iters # =  118 Done!!
+| Convergence rate:  0.0822660927792
+| Iters # =  119 Done!!
+| Convergence rate:  0.0806653764978
+| Iters # =  120 Done!!
+| Convergence rate:  0.0790955803911
+| Iters # =  121 Done!!
+| Convergence rate:  0.077556117719
+| Iters # =  122 Done!!
+| Convergence rate:  0.0760464124044
+| Iters # =  123 Done!!
+| Convergence rate:  0.0745658988589
+| Iters # =  124 Done!!
+| Convergence rate:  0.0731140218105
+| Iters # =  125 Done!!
+| Convergence rate:  0.0716902361341
+| Iters # =  126 Done!!
+| Convergence rate:  0.0702940066832
+| Iters # =  127 Done!!
+| Convergence rate:  0.0689248081248
+| Iters # =  128 Done!!
+| Convergence rate:  0.0675821247754
+| Iters # =  129 Done!!
+| Convergence rate:  0.0662654504399
+| Iters # =  130 Done!!
+| Convergence rate:  0.0649742882521
+| Iters # =  131 Done!!
+| Convergence rate:  0.0637081505173
+| Iters # =  132 Done!!
+| Convergence rate:  0.0624665585574
+| Iters # =  133 Done!!
+| Convergence rate:  0.0612490425573
+| Iters # =  134 Done!!
+| Convergence rate:  0.0600551414145
+| Iters # =  135 Done!!
+| Convergence rate:  0.0588844025893
+| Iters # =  136 Done!!
+| Convergence rate:  0.0577363819583
+| Iters # =  137 Done!!
+| Convergence rate:  0.056610643669
+| Iters # =  138 Done!!
+| Convergence rate:  0.0555067599972
+| Iters # =  139 Done!!
+| Convergence rate:  0.0544243112058
+| Iters # =  140 Done!!
+| Convergence rate:  0.0533628854059
+| Iters # =  141 Done!!
+| Convergence rate:  0.0523220784197
+| Iters # =  142 Done!!
+| Convergence rate:  0.0513014936454
+| Iters # =  143 Done!!
+| Convergence rate:  0.0503007419243
+| Iters # =  144 Done!!
+| Convergence rate:  0.0493194414096
+| Iters # =  145 Done!!
+| Convergence rate:  0.0483572174371
+| Iters # =  146 Done!!
+| Convergence rate:  0.0474137023981
+| Iters # =  147 Done!!
+| Convergence rate:  0.0464885356137
+| Iters # =  148 Done!!
+| Convergence rate:  0.0455813632116
+| Iters # =  149 Done!!
+| Convergence rate:  0.0446918380046
+| Iters # =  150 Done!!
+| Convergence rate:  0.0438196193704
+| Iters # =  151 Done!!
+| Convergence rate:  0.0429643731342
+| Iters # =  152 Done!!
+| Convergence rate:  0.0421257714522
+| Iters # =  153 Done!!
+| Convergence rate:  0.0413034926976
+| Iters # =  154 Done!!
+| Convergence rate:  0.0404972213484
+| Iters # =  155 Done!!
+| Convergence rate:  0.0397066478761
+| Iters # =  156 Done!!
+| Convergence rate:  0.0389314686373
+| Iters # =  157 Done!!
+| Convergence rate:  0.0381713857665
+| Iters # =  158 Done!!
+| Convergence rate:  0.0374261070706
+| Iters # =  159 Done!!
+| Convergence rate:  0.0366953459249
+| Iters # =  160 Done!!
+| Convergence rate:  0.0359788211718
+| Iters # =  161 Done!!
+| Convergence rate:  0.0352762570199
+| Iters # =  162 Done!!
+| Convergence rate:  0.0345873829453
+| Iters # =  163 Done!!
+| Convergence rate:  0.033911933595
+| Iters # =  164 Done!!
+| Convergence rate:  0.0332496486912
+| Iters # =  165 Done!!
+| Convergence rate:  0.0326002729373
+| Iters # =  166 Done!!
+| Convergence rate:  0.0319635559261
+| Iters # =  167 Done!!
+| Convergence rate:  0.0313392520488
+| Iters # =  168 Done!!
+| Convergence rate:  0.0307271204061
+| Iters # =  169 Done!!
+| Convergence rate:  0.0301269247203
+| Iters # =  170 Done!!
+| Convergence rate:  0.0295384332493
+| Iters # =  171 Done!!
+| Convergence rate:  0.0289614187023
+| Iters # =  172 Done!!
+| Convergence rate:  0.0283956581561
+| Iters # =  173 Done!!
+| Convergence rate:  0.0278409329737
+| Iters # =  174 Done!!
+| Convergence rate:  0.027297028724
+| Iters # =  175 Done!!
+| Convergence rate:  0.0267637351029
+| Iters # =  176 Done!!
+| Convergence rate:  0.0262408458556
+| Iters # =  177 Done!!
+| Convergence rate:  0.0257281587006
+| Iters # =  178 Done!!
+| Convergence rate:  0.0252254752551
+| Iters # =  179 Done!!
+| Convergence rate:  0.024732600961
+| Iters # =  180 Done!!
+| Convergence rate:  0.0242493450133
+| Iters # =  181 Done!!
+| Convergence rate:  0.0237755202887
+| Iters # =  182 Done!!
+| Convergence rate:  0.0233109432767
+| Iters # =  183 Done!!
+| Convergence rate:  0.0228554340101
+| Iters # =  184 Done!!
+| Convergence rate:  0.0224088159991
+| Iters # =  185 Done!!
+| Convergence rate:  0.0219709161646
+| Iters # =  186 Done!!
+| Convergence rate:  0.0215415647734
+| Iters # =  187 Done!!
+| Convergence rate:  0.0211205953752
+| Iters # =  188 Done!!
+| Convergence rate:  0.0207078447397
+| Iters # =  189 Done!!
+| Convergence rate:  0.0203031527955
+| Iters # =  190 Done!!
+| Convergence rate:  0.01990636257
+| Iters # =  191 Done!!
+| Convergence rate:  0.01951732013
+| Iters # =  192 Done!!
+| Convergence rate:  0.0191358745243
+| Iters # =  193 Done!!
+| Convergence rate:  0.018761877726
+| Iters # =  194 Done!!
+| Convergence rate:  0.0183951845774
+| Iters # =  195 Done!!
+| Convergence rate:  0.0180356527348
+| Iters # =  196 Done!!
+| Convergence rate:  0.0176831426145
+| Iters # =  197 Done!!
+| Convergence rate:  0.0173375173403
+| Iters # =  198 Done!!
+| Convergence rate:  0.0169986426913
+| Iters # =  199 Done!!
+| Convergence rate:  0.0166663870515
+| Iters # =  200 Done!!
+| Convergence rate:  0.0163406213591
+| Iters # =  201 Done!!
+| Convergence rate:  0.0160212190582
+| Iters # =  202 Done!!
+| Convergence rate:  0.0157080560504
+| Iters # =  203 Done!!
+| Convergence rate:  0.0154010106474
+| Iters # =  204 Done!!
+| Convergence rate:  0.015099963525
+| Iters # =  205 Done!!
+| Convergence rate:  0.0148047976774
+| Iters # =  206 Done!!
+| Convergence rate:  0.0145153983728
+| Iters # =  207 Done!!
+| Convergence rate:  0.0142316531093
+| Iters # =  208 Done!!
+| Convergence rate:  0.0139534515724
+| Iters # =  209 Done!!
+| Convergence rate:  0.0136806855924
+| Iters # =  210 Done!!
+| Convergence rate:  0.0134132491032
+| Iters # =  211 Done!!
+| Convergence rate:  0.0131510381021
+| Iters # =  212 Done!!
+| Convergence rate:  0.0128939506094
+| Iters # =  213 Done!!
+| Convergence rate:  0.0126418866297
+| Iters # =  214 Done!!
+| Convergence rate:  0.0123947481135
+| Iters # =  215 Done!!
+| Convergence rate:  0.0121524389197
+| Iters # =  216 Done!!
+| Convergence rate:  0.0119148647786
+| Iters # =  217 Done!!
+| Convergence rate:  0.0116819332557
+| Iters # =  218 Done!!
+| Convergence rate:  0.0114535537164
+| Iters # =  219 Done!!
+| Convergence rate:  0.011229637291
+| Iters # =  220 Done!!
+| Convergence rate:  0.0110100968406
+| Iters # =  221 Done!!
+| Convergence rate:  0.0107948469237
+| Iters # =  222 Done!!
+| Convergence rate:  0.0105838037631
+| Iters # =  223 Done!!
+| Convergence rate:  0.0103768852139
+| Iters # =  224 Done!!
+| Convergence rate:  0.0101740107318
+| Iters # =  225 Done!!
+| Convergence rate:  0.00997510134215
+| Iters # =  226 Done!!
+| Convergence rate:  0.00978007960921
+| Iters # =  227 Done!!
+| Convergence rate:  0.00958886960673
+| Iters # =  228 Done!!
+| Convergence rate:  0.00940139688842
+| Iters # =  229 Done!!
+| Convergence rate:  0.00921758845932
+| Iters # =  230 Done!!
+| Convergence rate:  0.00903737274763
+| Iters # =  231 Done!!
+| Convergence rate:  0.00886067957708
+| Iters # =  232 Done!!
+| Convergence rate:  0.00868744013983
+| Iters # =  233 Done!!
+| Convergence rate:  0.00851758696992
+| Iters # =  234 Done!!
+| Convergence rate:  0.00835105391721
+| Iters # =  235 Done!!
+| Convergence rate:  0.00818777612178
+| Iters # =  236 Done!!
+| Convergence rate:  0.00802768998891
+| Iters # =  237 Done!!
+| Convergence rate:  0.00787073316448
+| Iters # =  238 Done!!
+| Convergence rate:  0.00771684451084
+| Iters # =  239 Done!!
+| Convergence rate:  0.00756596408316
+| Iters # =  240 Done!!
+| Convergence rate:  0.00741803310627
+| Iters # =  241 Done!!
+| Convergence rate:  0.00727299395188
+| Iters # =  242 Done!!
+| Convergence rate:  0.00713079011629
+| Iters # =  243 Done!!
+| Convergence rate:  0.0069913661985
+| Iters # =  244 Done!!
+| Convergence rate:  0.00685466787878
+| Iters # =  245 Done!!
+| Convergence rate:  0.00672064189759
+| Iters # =  246 Done!!
+| Convergence rate:  0.00658923603498
+| Iters # =  247 Done!!
+| Convergence rate:  0.00646039909034
+| Iters # =  248 Done!!
+| Convergence rate:  0.00633408086255
+| Iters # =  249 Done!!
+| Convergence rate:  0.00621023213055
+| Iters # =  250 Done!!
+| Convergence rate:  0.0060888046342
+| Iters # =  251 Done!!
+| Convergence rate:  0.00596975105562
+| Iters # =  252 Done!!
+| Convergence rate:  0.00585302500081
+| Iters # =  253 Done!!
+| Convergence rate:  0.00573858098165
+| Iters # =  254 Done!!
+| Convergence rate:  0.00562637439827
+| Iters # =  255 Done!!
+| Convergence rate:  0.00551636152172
+| Iters # =  256 Done!!
+| Convergence rate:  0.00540849947702
+| Iters # =  257 Done!!
+| Convergence rate:  0.0053027462265
+| Iters # =  258 Done!!
+| Convergence rate:  0.00519906055349
+| Iters # =  259 Done!!
+| Convergence rate:  0.0050974020463
+| Iters # =  260 Done!!
+| Convergence rate:  0.00499773108256
+| Iters # =  261 Done!!
+| Convergence rate:  0.00490000881381
+| Iters # =  262 Done!!
+| Convergence rate:  0.00480419715039
+| Iters # =  263 Done!!
+| Convergence rate:  0.0047102587467
+| Iters # =  264 Done!!
+| Convergence rate:  0.00461815698662
+| Iters # =  265 Done!!
+| Convergence rate:  0.00452785596935
+| Iters # =  266 Done!!
+| Convergence rate:  0.00443932049539
+| Iters # =  267 Done!!
+| Convergence rate:  0.00435251605293
+| Iters # =  268 Done!!
+| Convergence rate:  0.00426740880439
+| Iters # =  269 Done!!
+| Convergence rate:  0.00418396557326
+| Iters # =  270 Done!!
+| Convergence rate:  0.00410215383124
+| Iters # =  271 Done!!
+| Convergence rate:  0.00402194168557
+| Iters # =  272 Done!!
+| Convergence rate:  0.00394329786662
+| Iters # =  273 Done!!
+| Convergence rate:  0.00386619171575
+| Iters # =  274 Done!!
+| Convergence rate:  0.00379059317336
+| Iters # =  275 Done!!
+| Convergence rate:  0.00371647276725
+| Iters # =  276 Done!!
+| Convergence rate:  0.00364380160108
+| Iters # =  277 Done!!
+| Convergence rate:  0.0035725513432
+| Iters # =  278 Done!!
+| Convergence rate:  0.00350269421557
+| Iters # =  279 Done!!
+| Convergence rate:  0.00343420298302
+| Iters # =  280 Done!!
+| Convergence rate:  0.00336705094257
+| Iters # =  281 Done!!
+| Convergence rate:  0.0033012119131
+| Iters # =  282 Done!!
+| Convergence rate:  0.00323666022516
+| Iters # =  283 Done!!
+| Convergence rate:  0.00317337071094
+| Iters # =  284 Done!!
+| Convergence rate:  0.00311131869451
+| Iters # =  285 Done!!
+| Convergence rate:  0.00305047998218
+| Iters # =  286 Done!!
+| Convergence rate:  0.00299083085316
+| Iters # =  287 Done!!
+| Convergence rate:  0.0029323480502
+| Iters # =  288 Done!!
+| Convergence rate:  0.00287500877068
+| Iters # =  289 Done!!
+| Convergence rate:  0.00281879065761
+| Iters # =  290 Done!!
+| Convergence rate:  0.00276367179098
+| Iters # =  291 Done!!
+| Convergence rate:  0.00270963067926
+| Iters # =  292 Done!!
+| Convergence rate:  0.00265664625096
+| Iters # =  293 Done!!
+| Convergence rate:  0.00260469784645
+| Iters # =  294 Done!!
+| Convergence rate:  0.00255376520995
+| Iters # =  295 Done!!
+| Convergence rate:  0.0025038284816
+| Iters # =  296 Done!!
+| Convergence rate:  0.00245486818974
+| Iters # =  297 Done!!
+| Convergence rate:  0.00240686524333
+| Iters # =  298 Done!!
+| Convergence rate:  0.00235980092451
+| Iters # =  299 Done!!
+| Convergence rate:  0.0023136568813
+| Iters # =  300 Done!!
+| Convergence rate:  0.00226841512047
+| Iters # =  301 Done!!
+| Convergence rate:  0.00222405800053
+| Iters # =  302 Done!!
+| Convergence rate:  0.00218056822484
+| Iters # =  303 Done!!
+| Convergence rate:  0.00213792883488
+| Iters # =  304 Done!!
+| Convergence rate:  0.00209612320365
+| Iters # =  305 Done!!
+| Convergence rate:  0.00205513502919
+| Iters # =  306 Done!!
+| Convergence rate:  0.00201494832823
+| Iters # =  307 Done!!
+| Convergence rate:  0.00197554742994
+| Iters # =  308 Done!!
+| Convergence rate:  0.00193691696988
+| Iters # =  309 Done!!
+| Convergence rate:  0.00189904188394
+| Iters # =  310 Done!!
+| Convergence rate:  0.00186190740252
+| Iters # =  311 Done!!
+| Convergence rate:  0.00182549904477
+| Iters # =  312 Done!!
+| Convergence rate:  0.00178980261294
+| Iters # =  313 Done!!
+| Convergence rate:  0.00175480418684
+| Iters # =  314 Done!!
+| Convergence rate:  0.00172049011842
+| Iters # =  315 Done!!
+| Convergence rate:  0.00168684702645
+| Iters # =  316 Done!!
+| Convergence rate:  0.00165386179134
+| Iters # =  317 Done!!
+| Convergence rate:  0.00162152154996
+| Iters # =  318 Done!!
+| Convergence rate:  0.00158981369067
+| Iters # =  319 Done!!
+| Convergence rate:  0.00155872584842
+| Iters # =  320 Done!!
+| Convergence rate:  0.00152824589988
+| Iters # =  321 Done!!
+| Convergence rate:  0.00149836195877
+| Iters # =  322 Done!!
+| Convergence rate:  0.00146906237118
+| Iters # =  323 Done!!
+| Convergence rate:  0.00144033571106
+| Iters # =  324 Done!!
+| Convergence rate:  0.00141217077575
+| Iters # =  325 Done!!
+| Convergence rate:  0.00138455658162
+| Iters # =  326 Done!!
+| Convergence rate:  0.00135748235978
+| Iters # =  327 Done!!
+| Convergence rate:  0.00133093755192
+| Iters # =  328 Done!!
+| Convergence rate:  0.00130491180612
+| Iters # =  329 Done!!
+| Convergence rate:  0.00127939497288
+| Iters # =  330 Done!!
+| Convergence rate:  0.00125437710115
+| Iters # =  331 Done!!
+| Convergence rate:  0.00122984843443
+| Iters # =  332 Done!!
+| Convergence rate:  0.00120579940699
+| Iters # =  333 Done!!
+| Convergence rate:  0.00118222064011
+| Iters # =  334 Done!!
+| Convergence rate:  0.00115910293848
+| Iters # =  335 Done!!
+| Convergence rate:  0.00113643728655
+| Iters # =  336 Done!!
+| Convergence rate:  0.00111421484505
+| Iters # =  337 Done!!
+| Convergence rate:  0.00109242694754
+| Iters # =  338 Done!!
+| Convergence rate:  0.00107106509706
+| Iters # =  339 Done!!
+| Convergence rate:  0.00105012096273
+| Iters # =  340 Done!!
+| Convergence rate:  0.00102958637661
+| Iters # =  341 Done!!
+| Convergence rate:  0.00100945333045
+| Iters # =  342 Done!!
+| Convergence rate:  0.000989713972578
+| CONVERGED SUCCESSFULLY at 0.000989713972578 !!!!
+## Elapsed time:  4.646555
+## Average error =  1.70191775112e-06
+prob2_NumericalTemperature.png DONE!!
+prob2_ExactTemperature.png DONE!!
+# Writing a csv file to store line data in x-direction
+# Writing convergence rate trace...

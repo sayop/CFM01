@@ -1,0 +1,80 @@
+| Convergence rate:  0.792773729674
+| Iters # =  0 Done!!
+| Convergence rate:  0.655912646925
+| Iters # =  1 Done!!
+| Convergence rate:  0.550456609288
+| Iters # =  2 Done!!
+| Convergence rate:  0.464174146212
+| Iters # =  3 Done!!
+| Convergence rate:  0.391784919221
+| Iters # =  4 Done!!
+| Convergence rate:  0.330375933824
+| Iters # =  5 Done!!
+| Convergence rate:  0.27802784349
+| Iters # =  6 Done!!
+| Convergence rate:  0.233320468924
+| Iters # =  7 Done!!
+| Convergence rate:  0.195173572797
+| Iters # =  8 Done!!
+| Convergence rate:  0.162735980226
+| Iters # =  9 Done!!
+| Convergence rate:  0.135288272465
+| Iters # =  10 Done!!
+| Convergence rate:  0.112186134784
+| Iters # =  11 Done!!
+| Convergence rate:  0.0928393268038
+| Iters # =  12 Done!!
+| Convergence rate:  0.0767084321081
+| Iters # =  13 Done!!
+| Convergence rate:  0.0633070102221
+| Iters # =  14 Done!!
+| Convergence rate:  0.0522036543888
+| Iters # =  15 Done!!
+| Convergence rate:  0.0430222038679
+| Iters # =  16 Done!!
+| Convergence rate:  0.0354406502024
+| Iters # =  17 Done!!
+| Convergence rate:  0.0291864585646
+| Iters # =  18 Done!!
+| Convergence rate:  0.0240308889977
+| Iters # =  19 Done!!
+| Convergence rate:  0.0197830810141
+| Iters # =  20 Done!!
+| Convergence rate:  0.0162844357214
+| Iters # =  21 Done!!
+| Convergence rate:  0.0134035431695
+| Iters # =  22 Done!!
+| Convergence rate:  0.0110317420025
+| Iters # =  23 Done!!
+| Convergence rate:  0.00907930923754
+| Iters # =  24 Done!!
+| Convergence rate:  0.00747223351493
+| Iters # =  25 Done!!
+| Convergence rate:  0.0061495065969
+| Iters # =  26 Done!!
+| Convergence rate:  0.00506086359573
+| Iters # =  27 Done!!
+| Convergence rate:  0.00416490542424
+| Iters # =  28 Done!!
+| Convergence rate:  0.00342754331284
+| Iters # =  29 Done!!
+| Convergence rate:  0.00282071273075
+| Iters # =  30 Done!!
+| Convergence rate:  0.00232131153922
+| Iters # =  31 Done!!
+| Convergence rate:  0.00191032413896
+| Iters # =  32 Done!!
+| Convergence rate:  0.00157209952785
+| Iters # =  33 Done!!
+| Convergence rate:  0.00129375650871
+| Iters # =  34 Done!!
+| Convergence rate:  0.00106469381823
+| Iters # =  35 Done!!
+| Convergence rate:  0.00087618676448
+| CONVERGED SUCCESSFULLY at 0.00087618676448 !!!!
+## Elapsed time:  0.025762
+## Average error =  4.07371621739e-05
+prob2_NumericalTemperature.png DONE!!
+prob2_ExactTemperature.png DONE!!
+# Writing a csv file to store line data in x-direction
+# Writing convergence rate trace...

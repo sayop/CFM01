@@ -1,0 +1,38 @@
+| Convergence rate:  0.799703578037
+| Iters # =  0 Done!!
+| Convergence rate:  0.592781470552
+| Iters # =  1 Done!!
+| Convergence rate:  0.444114054069
+| Iters # =  2 Done!!
+| Convergence rate:  0.332448391285
+| Iters # =  3 Done!!
+| Convergence rate:  0.24642407207
+| Iters # =  4 Done!!
+| Convergence rate:  0.179254551535
+| Iters # =  5 Done!!
+| Convergence rate:  0.126399136543
+| Iters # =  6 Done!!
+| Convergence rate:  0.0845144379915
+| Iters # =  7 Done!!
+| Convergence rate:  0.0527058771107
+| Iters # =  8 Done!!
+| Convergence rate:  0.0305795268381
+| Iters # =  9 Done!!
+| Convergence rate:  0.0165118571598
+| Iters # =  10 Done!!
+| Convergence rate:  0.00840110302879
+| Iters # =  11 Done!!
+| Convergence rate:  0.00435960198588
+| Iters # =  12 Done!!
+| Convergence rate:  0.00260726637136
+| Iters # =  13 Done!!
+| Convergence rate:  0.00164534565737
+| Iters # =  14 Done!!
+| Convergence rate:  0.000947456457947
+| CONVERGED SUCCESSFULLY at 0.000947456457947 !!!!
+## Elapsed time:  0.012181
+## Average error =  3.80998823969e-05
+prob2_NumericalTemperature.png DONE!!
+prob2_ExactTemperature.png DONE!!
+# Writing a csv file to store line data in x-direction
+# Writing convergence rate trace...
