@@ -15,17 +15,18 @@ start = time.clock()
 ##
 
 # iSwitch for numerical method choice: 0-Jacobi, 1-Gauss-Seidel
-iSwitch = 0
+iSwitch = 1
+iMultiGrid = 1
 
 # maximum iterations
-nIters = 1
+nIters = 99999
 
 # if residual rate comes below this criterion, the iteration will stop!
 convergeCrit = 0.001
 
 # grid: i,j resolution
-iDim = 8
-jDim = 8
+iDim = 40
+jDim = 40
 icDim = int(iDim / 2)
 jcDim = int(jDim / 2)
 # x, y: spatial dimension of N^2 nodes
@@ -49,8 +50,12 @@ Sources = np.ones((iDim,jDim))
 
 residualTrace = []
 
+# exacsolution space
+exacT = findExactSolution(x, y, iDim, jDim)
+
 for niter in range(nIters):
 
+   errorF = exacT - T
    #compute residual at initial state
    if niter == 0: residualInit, rMat = computeResidual(T, Sources, thermDiffusivity, iDim, jDim, dx, dy)
 
@@ -62,13 +67,19 @@ for niter in range(nIters):
       # 1: runs for Jacobi method with relaxation coefficient.
       newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
 
-   # compute residual for updated solution
-   residual, rMat = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
+   if iMultiGrid == 1:
+      # compute residual for coarse grid computation
+      residual, rMat = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
+      #
+      # Go into coarse grid calculation for multigrid method
+      # 
+      errorF = computeOnCoarseGrid(rMat,Sources,thermDiffusivity,errorF,iDim,jDim,dx,dy,iSwitch,relaxCoeff)
+      newT = newT + errorF
+      # re-compute residual with multigrid-updated temperature field.
+      residual, rMat = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)
 
-   #
-   # Go into coarse grid calculation for multigrid method
-   # 
-   computeOnCoarseGrid(rMat,Sources,thermDiffusivity,iDim,jDim,dx,dy,iSwitch,relaxCoeff)
+   # compute residual for tracking convergence
+   residual, rMat = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)
 
    # check convergence rate:
    convergenceRate = residual / residualInit
@@ -87,8 +98,6 @@ for niter in range(nIters):
 elapsed = (time.clock() - start)
 print "## Elapsed time: ", elapsed
 
-# exacsolution space
-exacT = findExactSolution(x, y, iDim, jDim)
 
 # return average error: the error is defined as RMS of 
 # deviation of numerical solution from exact solution 

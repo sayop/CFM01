@@ -7,20 +7,28 @@ from grid import *
 from numericalMethods import *
 from exactSol import *
 from post import *
+from multigrid import *
 
 start = time.clock()
 ##
 ## Input parameters
 ##
 
+# iSwitch for numerical method choice: 0-Jacobi, 1-Gauss-Seidel
+iSwitch = 0
+iMultiGrid = 0
+
 # maximum iterations
-nIters = 99999
+nIters = 20
+
 # if residual rate comes below this criterion, the iteration will stop!
 convergeCrit = 0.001
 
 # grid: i,j resolution
-iDim = 20
-jDim = 20
+iDim = 10
+jDim = 10
+icDim = int(iDim / 2)
+jcDim = int(jDim / 2)
 # x, y: spatial dimension of N^2 nodes
 xmin = 0.0
 xmax = 1.0
@@ -35,25 +43,42 @@ x, y, dx, dy = updateGrid(x, y, xmin, xmax, ymin, ymax, iDim, jDim)
 # solution space: T
 # solution space is initizlied with zeros for every elements.
 T = np.zeros((iDim,jDim))
-# Boundary condition: T is set to zero on all walls.
-Twall = 0.0
 # diffusion coefficient: lambda is held constant as one
 thermDiffusivity = np.ones((iDim,jDim))
 # Source Term matrix: Q{ixj}
 Sources = np.ones((iDim,jDim))
 
 residualTrace = []
+
+# exacsolution space
+exacT = findExactSolution(x, y, iDim, jDim)
+
 for niter in range(nIters):
 
+   errorF = exacT - T
    #compute residual at initial state
-   if niter == 0: residualInit = computeResidual(T, Sources, thermDiffusivity, iDim, jDim, dx, dy)
+   if niter == 0: residualInit, rMat = computeResidual(T, Sources, thermDiffusivity, iDim, jDim, dx, dy)
+
    # go for point-iterations: will update new time level
-   # first one runs for Jacobi method with relaxation coefficient.
-   # second one runs for Jacobi method with relaxation coefficient.
-   #newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
-   newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
-   # compute residual for updated solution
-   residual = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
+   if iSwitch == 0:
+      # 0: runs for Jacobi method with relaxation coefficient.
+      newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   elif iSwitch == 1:
+      # 1: runs for Jacobi method with relaxation coefficient.
+      newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+
+   if iMultiGrid == 1:
+      # compute residual for coarse grid computation
+      residual, rMat = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
+      #
+      # Go into coarse grid calculation for multigrid method
+      # 
+      errorF = computeOnCoarseGrid(rMat,Sources,thermDiffusivity,errorF,iDim,jDim,dx,dy,iSwitch,relaxCoeff)
+      newT = newT + errorF
+
+   # compute residual for tracking convergence
+   residual, rMat = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)
+
    # check convergence rate:
    convergenceRate = residual / residualInit
    print '| Convergence rate: ', convergenceRate
@@ -71,8 +96,6 @@ for niter in range(nIters):
 elapsed = (time.clock() - start)
 print "## Elapsed time: ", elapsed
 
-# exacsolution space
-exacT = findExactSolution(x, y, iDim, jDim)
 
 # return average error: the error is defined as RMS of 
 # deviation of numerical solution from exact solution 

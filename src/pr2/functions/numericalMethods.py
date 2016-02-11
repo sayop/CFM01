@@ -20,7 +20,7 @@ def pointIterJacobi(phi, Q, lamda, imax, jmax, alpha, dx, dy):
          # coeff * T_{i,j+1} in finite difference equation
          neighborN = - lamda[i][j] / dySqr * phi[i][j+1]
          # This is coefficient for my PHI at location (i,j).
-         myCoef    = 2.0 * (1.0/dxSqr + 1.0/dySqr)
+         myCoef    = 2.0 * lamda[i][j] * (1.0/dxSqr + 1.0/dySqr)
          # update NEW phi
          newPhi = (Q[i][j] - neighborL - neighborR - neighborS - neighborN) / myCoef
          phiIncrement = newPhi - phi[i][j]
@@ -35,8 +35,6 @@ def pointIterJacobi(phi, Q, lamda, imax, jmax, alpha, dx, dy):
 
 
 def pointIterGS(phi, Q, lamda, imax, jmax, alpha, dx, dy):
-   #newT = np.zeros((imax,jmax))
-   residual = np.zeros((imax,jmax))
    dxSqr = dx * dx
    dySqr = dy * dy
    # convergence check variable
@@ -54,7 +52,7 @@ def pointIterGS(phi, Q, lamda, imax, jmax, alpha, dx, dy):
          # coeff * T_{i,j+1} in finite difference equation
          neighborN = - lamda[i][j] / dySqr * phi[i][j+1]
          # This is coefficient for my PHI at location (i,j).
-         myCoef    = 2.0 * (1.0/dxSqr + 1.0/dySqr)
+         myCoef    = 2.0 * lamda[i][j] * (1.0/dxSqr + 1.0/dySqr)
          # update NEW phi
          newPhi = (Q[i][j] - neighborL - neighborR - neighborS - neighborN) / myCoef
          phiIncrement = newPhi - phi[i][j]
