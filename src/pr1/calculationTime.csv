@@ -1,0 +1,4 @@
+case,time_elapsed,iters
+reference,0.000417,1
+1c_a,0.001383,4
+1c_b,0.001368,4

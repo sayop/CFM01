@@ -58,6 +58,20 @@
 <ol class="arabic simple">
 <li>Find <span class="math">\(\phi\)</span> using TDMA for following <span class="math">\(Q\)</span> and corresponding exact solution cases:</li>
 </ol>
+<blockquote>
+<div><ul class="simple">
+<li>About solution method<ul>
+<li>Compared to the problem 1-b, this is non-linear problem because the diffusivity is dependent on the solution <span class="math">\(\phi\)</span>. For this reason, it can&#8217;t be solved with simple block iterative method like TDMA. The reason is because we cannot build tri-diagonal <span class="math">\(A\)</span> matrix for this case due to the non-linear behavior.</li>
+<li>The solution method for this problem has to be iterative method to track the converging solution.</li>
+<li>The iterative method updates the initial guess of solution space and seeks the converged value by repeating the numerical algorithm.</li>
+<li>Initially <span class="math">\(\phi_{i}\)</span> space is initialized with certain value. Here, every points is initialized with zero.</li>
+<li>Then, the every step of TDMS method will propagate the updated info from the guessed <span class="math">\(\phi\)</span>.</li>
+<li>The code has a function to check the residual value from the updated <span class="math">\(\phi\)</span> and quantify how much it propagates from the solution of previous step.</li>
+<li>It repeats until the deviation of solution from the past reaches to zero level. (NOTE: the residual will never reach to zero level because of truncation errors of our finite difference equations)</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
 <ul>
 <li><p class="first">CASE1:  <span class="math">\(Q = 0\)</span>,  <span class="math">\(\;\; \phi(x) = -1+\sqrt{4-3x}\)</span></p>
 <div class="figure">
@@ -81,7 +95,7 @@
 <ul class="simple">
 <li>Converged at 5th iterations with residual of 0.000716942145114</li>
 <li>Average error = 1.01159413052e-05</li>
-<li>Calculation time [sec] = 0.001741</li>
+<li>Calculation time [sec] = 0.001383</li>
 </ul>
 </li>
 </ul>
@@ -103,6 +117,78 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<ul class="simple">
+<li>Discussions on comparison between different source terms<ul>
+<li>Only difference between these three cases has come from the source term deviation.</li>
+<li>Since we set <span class="math">\(U\)</span> to zero, we do not expect any convective effect. Only matter of the problem is diffusion and source terms.</li>
+<li>Pure diffusion problem with constant diffusivity will result in linear <span class="math">\(\phi\)</span> profile along the x-direction.</li>
+<li>The slight bump from the pure diffusion problem is a combination of non-linear diffusivity and the source terms like heat source in heat conduction problem.</li>
+<li>The CASE 1 represents the pure diffusion problem with non-linear diffusivity. Since the diffusivity is proportional to <span class="math">\(\phi\)</span>, higher value of <span class="math">\(\phi\)</span> is more likely to propage to the lower <span class="math">\(\phi\)</span> region.</li>
+<li>CASE 2 and CASE 3 are showing source term effect. When the heat conduction with heat source is imagined, temperature rises with the heat source.</li>
+<li>CASE 3 has less heat source as it goes far away from the origin. It then leads to less bump compared to the CASE 2.</li>
+</ul>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><em>Comparison in calculation time</em></li>
+</ol>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="33%" />
+<col width="44%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td>calculation time</td>
+<td>total # of iterations</td>
+</tr>
+<tr class="row-even"><td><ol class="first last loweralpha simple" start="2">
+<li></li>
+</ol>
+</td>
+<td>0.000417</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last loweralpha simple" start="3">
+<li>CASE 1</li>
+</ol>
+</td>
+<td>0.001337</td>
+<td>5</td>
+</tr>
+<tr class="row-even"><td><ol class="first last loweralpha simple" start="3">
+<li>CASE 2</li>
+</ol>
+</td>
+<td>0.001383</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last loweralpha simple" start="3">
+<li>CASE 3</li>
+</ol>
+</td>
+<td>0.001404</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Discussion<ul>
+<li>As discussed earlier, the previous problem 1-b was a linear set of equations. So it can be solved with linear system of equations using block iterative method called here TDMA.</li>
+<li>So, the TDMA in problem 1-b was not iterated multiple times.</li>
+<li>The non-linear problem here is asking us to seek the converged solution with iterative method.</li>
+<li>Three differenct source terms cases requires only 5 iterations until it satifies the convergence criteria. Here, convergence criteria was set to 0.001.</li>
+<li>Since the solution method is identical, the calculation time is almost identical because it proceeds same repetition of TDMA 5 times.</li>
+<li>Slight change of calculation time might have come from the compute resource occupied by the other software.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
 </div>
 
 

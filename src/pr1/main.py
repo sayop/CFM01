@@ -17,7 +17,7 @@ start = time.clock()
 # maximum iterations
 # For problem1-b, set nIters to 1
 # For poroble1-c, set nIters big enough to run until it converge
-nIters = 1
+nIters = 20
 
 
 # grid: i,j,k resolution
@@ -34,8 +34,8 @@ phi_xRight = 0
 # DivTermCoeff: coefficient of divergence term.
 # In this project, this is equivalent to U, which is convective velocity.
 # Set this value to zero for pr1-c
-DivTermCoeff = np.ones((iDim))
-#DivTermCoeff = np.zeros((iDim))
+#DivTermCoeff = np.ones((iDim))
+DivTermCoeff = np.zeros((iDim))
 
 # grid coordinates: Structured
 x = np.zeros((iDim))
@@ -50,8 +50,8 @@ phi = np.zeros((iDim))
 phiExact = np.zeros((iDim))
 
 # source terms
-Q = 0.0*np.ones((iDim))
-#Q = 0.1*np.ones((iDim))
+#Q = 0.0*np.ones((iDim))
+Q = 0.1*np.ones((iDim))
 #Q = 0.1 * x
 
 
@@ -69,7 +69,7 @@ for niter in range(nIters):
    A = np.zeros((iDim,iDim))
    A, Q = updateDirichletBC(A, Q, iDim, phi_xLeft, phi_xRight)
    # Update gamma vector for prob. 1-c
-   #gamma = 0.1 + 0.1*phi
+   gamma = 0.1 + 0.1*phi
    # update A matrix
    # A matrix is constructed by descritizing convection term and 
    # diffusion term independently. 
@@ -90,11 +90,11 @@ for niter in range(nIters):
 
 
 # exact solution for pr1-b
-exact = findExactSolution1(x,DivTermCoeff,gamma,phi,iDim)
+#exact = findExactSolution1(x,DivTermCoeff,gamma,phi,iDim)
 # exact solution for pr1-c: Q=0.0
 #exact = findExactSolution2(x,iDim)
 # exact solution for pr1-c: Q=0.1
-#exact = findExactSolution3(x,iDim)
+exact = findExactSolution3(x,iDim)
 # exact solution for pr1-c: Q=0.1x
 #exact = findExactSolution4(x,iDim)
 

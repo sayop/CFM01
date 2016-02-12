@@ -65,21 +65,32 @@
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/prob1Solution_fullScale.png"><img alt="../../_images/prob1Solution_fullScale.png" src="../../_images/prob1Solution_fullScale.png" style="width: 480.0px; height: 300.0px;" /></a>
 </div>
-<ol class="loweralpha simple" start="2">
+<ul class="simple">
+<li>Discussions on numerical solution<ul>
+<li>As observed in the first figure, the final solution looks having strong convection effect with such a flat upstream solution and getting (diffused) down to the boundary fixed value at right wall.</li>
+<li>The numerical solution with 50 grid points is having consistent match with exact solution.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ol class="loweralpha simple" start="2">
 <li>Effect of grid size on numerical solution in magnified scale</li>
 </ol>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/multiPlotsPHI.png"><img alt="../../_images/multiPlotsPHI.png" src="../../_images/multiPlotsPHI.png" style="width: 684.8px; height: 467.2px;" /></a>
 </div>
-</div></blockquote>
 <ul class="simple">
-<li>Discussion<ul>
-<li>blah</li>
-<li>blah</li>
-<li>blah</li>
+<li>Discussions on grid size effect<ul>
+<li>Deviation of numerical simulation from the analytic solution is getting bigger as the grid become coarser.</li>
+<li>Biggest inaccuracy in numerical solution (descretization errors) with the case of <span class="math">\(N\)</span> = 10.</li>
 </ul>
 </li>
 </ul>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -87,18 +98,20 @@
 <li><strong>Plot</strong> the average error as a function of <span class="math">\(N\)</span> in a log scale and normalization with respect to grid size.</li>
 </ol>
 <blockquote>
-<div><div class="figure">
+<div><p>Here the average error is defined as Root Mean Square of deviation of numerical solution from the analytical solution. The calculation was done with the following definition.</p>
+<div class="math">
+\[err = \frac{\sqrt{\sum_{i=1}^{N}(\phi_i - \phi^{exac}_i)^2}}{N}\]</div>
+<div class="figure">
 <a class="reference internal image-reference" href="../../_images/averageErrors.png"><img alt="../../_images/averageErrors.png" src="../../_images/averageErrors.png" style="width: 480.0px; height: 300.0px;" /></a>
 </div>
-</div></blockquote>
 <ul class="simple">
 <li>Discussion<ul>
-<li>blah</li>
-<li>blah</li>
-<li>blah</li>
+<li>Here, the average error is dropping dramatically as the smaller grid size is used.</li>
+<li>As the central descritization is applied for finite difference, the accuracy is improved with second order accuracy.</li>
 </ul>
 </li>
 </ul>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -106,9 +119,18 @@
 <li><strong>Examine</strong> how the calculation time changes with <span class="math">\(N\)</span> and <strong>evaluate</strong> the time complexity of the algorithm.</li>
 </ol>
 <blockquote>
-<div><div class="figure">
+<div><p>The computational time is defined as the consumed real calculation time while the numerical solution is being solved. The time is measured only during the numerical scheme process, meaning that pre-processing and post-processing time has been eliminated.</p>
+<div class="figure">
 <a class="reference internal image-reference" href="../../_images/computeTime.png"><img alt="../../_images/computeTime.png" src="../../_images/computeTime.png" style="width: 480.0px; height: 300.0px;" /></a>
 </div>
+<ul class="simple">
+<li>Discussion<ul>
+<li>The compute time is increased linearly as the grid size become bigger.</li>
+<li>The linear increment of time is because of the 1-dimensional grid use.</li>
+<li>The currently used solver, TDMA sweeps back and forth one time along the grid points to have solutions of system of linear equations. Thus, the actually calculation time must be only dependent on the number of node points.</li>
+</ul>
+</li>
+</ul>
 </div></blockquote>
 </div>
 

@@ -55,6 +55,44 @@
   <div class="section" id="problem-1-a">
 <h1>Problem 1 - a<a class="headerlink" href="#problem-1-a" title="Permalink to this headline">¶</a></h1>
 <p>Develop a finite difference algorithm using central differences for the solution of the transport equation. Describe the essential steps.</p>
+<p>Given equation:</p>
+<div class="math">
+\[U\frac{\partial \phi}{\partial x} = \frac{\partial}{\partial x} \left ( \Gamma \frac{\partial \phi}{\partial x} \right ) + Q\]</div>
+<p>To make the given form of equation convenient to be converted into descritized algebraic equations, terms having dependent variables are sorted out in the left hand side leaving <span class="math">\(Q\)</span> in the right hand side as:</p>
+<div class="math">
+\[U\frac{\partial \phi}{\partial x} - \frac{\partial}{\partial x} \left ( \Gamma \frac{\partial \phi}{\partial x} \right ) = + Q\]</div>
+<p>Now, the left hand side is composed of convection term and diffusion term, respectively. These two term are going to be referred to as <em>divergence</em> term and <em>laplacian</em> term, respectively.</p>
+<ul>
+<li><p class="first">Divergence term descritization:</p>
+<div class="math">
+\[U\frac{\partial \phi}{\partial x}:\;\; U\left ( \frac{\phi_{i+1} - \phi_{i-1}}{\Delta  x} \right )\]</div>
+<p>Again, further descritzation should be done for the remaining first derivative in the middle points at <span class="math">\(i+1/2\)</span> and <span class="math">\(i-1/2\)</span> and it leads to:</p>
+<div class="math">
+\[-\frac{1}{\Delta x} \left [ \frac{\Gamma_{i+1/2}\left ( \phi_{i+1} - \phi_{i-1} \right ) - \Gamma_{i-1/2}\left ( \phi_{i} - \phi_{i-1} \right )}{\Delta x} \right ]\]</div>
+</li>
+<li><p class="first">Laplacian term descritization:</p>
+<div class="math">
+\[- \frac{\partial}{\partial x} \left ( \Gamma \frac{\partial \phi}{\partial x} \right ): \;\; -\frac{1}{\Delta x} \left [ \left ( \Gamma \frac{\partial \phi}{\partial x} \right )_{i+1/2} - \left ( \Gamma \frac{\partial \phi}{\partial x} \right )_{i-1/2} \right ]\]</div>
+</li>
+</ul>
+<p>Constructing every terms with source term in right hand side at <span class="math">\(i\)</span> node point becomes such that the final form has three terms with respective corresponding <span class="math">\(i\)</span> node and neightbor points, <span class="math">\(i-1\)</span> and <span class="math">\(i+1\)</span> will become:</p>
+<blockquote>
+<div><div class="math">
+\[a_{i-1} \phi_{i-1} + a_{i} \phi_{i} + a_{i+1} \phi_{i+1} = Q_{i}\]</div>
+<p>where,</p>
+<div class="math">
+\[a_{i} = \frac{\left ( \Gamma_{i+1/2} + \Gamma_{i-1/2} \right )}{\Delta x^2}\]</div>
+<div class="math">
+\[a_{i-1} = - \left ( \frac{\Gamma_{i-1/2}}{\Delta x^2} + \frac{U}{\Delta x} \right )\]</div>
+<div class="math">
+\[a_{i+1} = - \left ( \frac{\Gamma_{i+1/2}}{\Delta x^2} - \frac{U}{\Delta x} \right )\]</div>
+</div></blockquote>
+<p>Here again we need to quantify the diffusion coefficient <span class="math">\(\Gamma\)</span> at middle points where are not actually in presence. Therefore, linear interpolation is done for those middle point for having diffusivity in the second derivative terms:</p>
+<blockquote>
+<div><div class="math">
+\[\Gamma_{i+1/2} = \frac{1}{2}\left ( \Gamma_{i+1} + \Gamma_{i-1} \right )\]</div>
+</div></blockquote>
+<p>Now we have single algebraic equation for each single node point. The node point is now linked to the neighbor right next to it. Thus, we can construct tri-diagonal matrix for those coefficients when we construct system of linear equations in 1-dimensional problem: <span class="math">\(A \Phi = Q\)</span>. <span class="math">\(A\)</span> can be described as a matrix or tensor form with two ranks. <span class="math">\(\Phi\)</span> and <span class="math">\(Q\)</span> are vectors.</p>
 </div>
 
 
