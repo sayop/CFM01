@@ -50,6 +50,82 @@
             
   <div class="section" id="problem-2-g">
 <h1>Problem 2 - g<a class="headerlink" href="#problem-2-g" title="Permalink to this headline">¶</a></h1>
+<p>Solve the problem using a 2-level geometric multigrid method. Compare the computational time with other methods.</p>
+<blockquote>
+<div><p>Following figures show the contour and line plots of multigrid solution with Gauss-Seidel method. Those two figures are illustrating converged temperature solution consistent with the previous solution obtained by the other methods.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/solution_GS-MG.png"><img alt="../../_images/solution_GS-MG.png" src="../../_images/solution_GS-MG.png" style="width: 480.0px; height: 400.0px;" /></a>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/lineplot_GS-MG.png"><img alt="../../_images/lineplot_GS-MG.png" src="../../_images/lineplot_GS-MG.png" style="width: 480.0px; height: 300.0px;" /></a>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>The following tests were performed on 40x40 grid case. Four different setup has been set to find the performace of multi-grid method.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="44%" />
+<col width="32%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>test case</td>
+<td>Main-iteration # at final</td>
+<td>Computation time</td>
+</tr>
+<tr class="row-even"><td>Jacobi w/o MG</td>
+<td>2069</td>
+<td>42.83 sec</td>
+</tr>
+<tr class="row-odd"><td>Jacobi w/ MG</td>
+<td>20</td>
+<td>14.07 sec</td>
+</tr>
+<tr class="row-even"><td>G-S w/o MG</td>
+<td>1035</td>
+<td>27.49 sec</td>
+</tr>
+<tr class="row-odd"><td>G-S w/ MG (1)</td>
+<td>8</td>
+<td>13.28 sec</td>
+</tr>
+<tr class="row-even"><td>G-S w/ MG (2)</td>
+<td>14</td>
+<td>13.78 sec</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>Discussions<ul>
+<li>The multi-grid has been tested on different set of numerical methods and different sub-iteration numbers. The best solution was achieved by using 10 sub-iteration on coarse grid with properly specified <span class="math">\(e\)</span> matrix.</li>
+<li>The computational time with multi-grid method was reduced by a factor of 2 for G-S and 3 for Jacobi.</li>
+<li>Interestingly, using multi-grid method and its fast convergence cover up the slowness of Jacobi method: Note the computational time between G-S and Jacobi is not significant when multi-grid is used.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li>Effect of initial condition for <span class="math">\(e\)</span> matrix on coarse grid.<ul>
+<li>The final two test cases with G-S with multi-grid were conducted with the different initial condition for <span class="math">\(e\)</span> matrix on coarse grid.</li>
+<li>The first one &#8216;G-S w/ MG (1)&#8217; runs with non-zero value of initial condition for <span class="math">\(e\)</span> matrix. The initial condition was set from the half of errors between current time level solution and exact solution.</li>
+<li>The reason that &#8216;half&#8217; of the error was used is to avoid the divergence. Under relaxing effect in initial condition was helpful to improve the convergency in coarse grid.</li>
+<li>On the other hand, the zero set of initial condition for <span class="math">\(e\)</span> matrix required more iterations. But total computational time is not significantly far away from the first test case, &#8216;G-S w/ MG (1)&#8217;.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
 </div>
 
 

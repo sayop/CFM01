@@ -28,4 +28,6 @@ The scaling test has been done for the different numerical methods on 40x40 grid
    - As observed in the previous section, the best performance was achieved with choice of :math:`\alpha` = 1.95 usign SOR method. 
    - The computational time is reduced almost by a factor of 25 from the worst case. 
    - This dramatical improvement is obtained even with slightly improved average error.
-   - All of the numerical method used here is esentially based on iterative method which is suppose to propagate the updated info to the final solution.
+   - All of the numerical method used here is esentially based on iterative method which is supposed to propagate the updated info to the final solution.
+   - For that reason, the over-relaxed increment of solution is actually aimed to promote the speed of infomation propagation such that it fastly reaches to the converged solution.
+   - However, exceesive promotion with greater value than :math:`\alpha` = 2 is likely to make over-shoot effect of increment that incudes divergence of the solution.

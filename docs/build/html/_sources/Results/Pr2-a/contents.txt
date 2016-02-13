@@ -46,4 +46,4 @@ where :math:`T` and :math:`Q` are vector having :math:`n^4` elements:
 .. math::
    \begin{bmatrix} Q_{1,1} & Q_{1,2} & \cdots  & Q_{1,n} & Q_{2,1} & \cdots  & Q_{2,n} & \cdots & Q_{i,j} & \cdots & Q_{n,n} \end{bmatrix}^{T}
 
-
+Here, :math:`A` matrix is not formed tridiagonal as it is seen in the first problem because the current set of solution is defined in 2-dimensional domain. For that reason, coefficient matrix should contain all four neighbor's constant. The resulting :math:`A` matrix will have :math:`N^2 \times N^2` elements.

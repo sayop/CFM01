@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to CFM First Project's documentation!
-=============================================
+Computational Fluid Mechanics: First Computer Project
+=====================================================
 
 Contents:
 
@@ -12,7 +12,6 @@ Contents:
    :maxdepth: 2
 
 
-   PrjDescription/contents
    CodeDevel/contents
    Results/index
 

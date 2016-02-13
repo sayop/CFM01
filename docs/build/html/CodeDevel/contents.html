@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Code development &mdash; CFM First Project 0.0.1 documentation</title>
+    <title>Code Instruction &mdash; CFM First Project 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="CFM First Project 0.0.1 documentation" href="../index.html" />
     <link rel="next" title="Results" href="../Results/index.html" />
-    <link rel="prev" title="Project description" href="../PrjDescription/contents.html" /> 
+    <link rel="prev" title="Welcome to CFM First Project’s documentation!" href="../index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -39,7 +39,7 @@
           <a href="../Results/index.html" title="Results"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../PrjDescription/contents.html" title="Project description"
+          <a href="../index.html" title="Welcome to CFM First Project’s documentation!"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">CFM First Project 0.0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -50,9 +50,106 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="code-development">
-<h1>Code development<a class="headerlink" href="#code-development" title="Permalink to this headline">¶</a></h1>
-<p>The present project is aimed to develop a computer program</p>
+  <div class="section" id="code-instruction">
+<h1>Code Instruction<a class="headerlink" href="#code-instruction" title="Permalink to this headline">¶</a></h1>
+<p>The present project is aimed to develop a computer program for solving a steady solution with different numerical method. The code being used for answering all the question here is written with Python language. This program is to run with simple command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python main.py
+</pre></div>
+</div>
+<p>Before running this Python script, please make sure that you have also <em>functions</em> folder that contains pre-defined function for specific purpose use. The problem 1 and problem 2 have different sets of python scripts. However running the script is working in the same methodology.</p>
+<div class="section" id="quick-instruction-for-problem-1">
+<h2>Quick instruction for problem 1<a class="headerlink" href="#quick-instruction-for-problem-1" title="Permalink to this headline">¶</a></h2>
+<p>To run the simulation, you only need to simply open the file named <em>main.py</em> using editor for example, VI on unix system:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ vi main.py
+</pre></div>
+</div>
+<p>You should be able to find the following line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># maximum iterations</span>
+<span class="c"># For problem1-b, set nIters to 1</span>
+<span class="c"># For poroble1-c, set nIters big enough to run until it converge</span>
+<span class="n">nIters</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>This is to set maximum iteration number. To run the steady-state linear equation, set it to 1 in order not to repeat redundant iteration.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># grid: i,j,k resolution</span>
+<span class="n">iDim</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">jDim</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">kDim</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c"># x: spatial dimension of cube</span>
+<span class="n">xmin</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="c"># Boundary condition</span>
+<span class="c"># Dirichlet BC:</span>
+<span class="n">phi_xLeft</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">phi_xRight</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>In this script, you will also find <em>iDim</em> for setting up grid size, and <em>xmax</em> for computational domain dimension. Here we are supposed to use Dirichlet boundary condition, so you should speicify the required <span class="math">\(\phi\)</span> at left and right boundaries.</p>
+<p>If you run the simulation with this script, you will see the following files in the same directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>sayop@reynolds:~/data/GaTech-CourseWorks/ME-CFM/CFM01/src/pr1$ ls
+dataOut.csv  functions  main.py  prob1Solution.png
+</pre></div>
+</div>
+<p><em>dataOut.csv</em> is the text file for having numerical solution and analytical solution. And <em>prob1Solution.png</em> is a automatically produced line plot for the solution comparison.</p>
+</div>
+<div class="section" id="quick-instructions-for-problem-2">
+<h2>Quick instructions for problem 2<a class="headerlink" href="#quick-instructions-for-problem-2" title="Permalink to this headline">¶</a></h2>
+<p>You will have following file and folder for the problem 2 and multi-grid:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sayop@reynolds:~/data/GaTech-CourseWorks/ME-CFM/CFM01/src/multigrid$ ls
+functions  main.py  plotCenterData.py
+$ cd /functions
+$ ll
+drwxrwxr-x 2 sayop sayop 4096 Feb 12 23:01 ./
+drwxrwxr-x 3 sayop sayop 4096 Feb 12 23:35 ../
+-rw-rw-r-- 1 sayop sayop  859 Feb 10 21:48 exactSol.py
+-rw-rw-r-- 1 sayop sayop 1176 Feb 10 21:56 exactSol.pyc
+-rw-rw-r-- 1 sayop sayop  258 Feb 10 21:48 grid.py
+-rw-rw-r-- 1 sayop sayop  471 Feb 10 21:56 grid.pyc
+-rw-rw-r-- 1 sayop sayop 3005 Feb 12 22:39 multigrid.py
+-rw-rw-r-- 1 sayop sayop 2582 Feb 12 22:39 multigrid.pyc
+-rw-rw-r-- 1 sayop sayop 4016 Feb 11 02:03 numericalMethods.py
+-rw-rw-r-- 1 sayop sayop 3886 Feb 11 01:50 numericalMethods.py.bak
+-rw-rw-r-- 1 sayop sayop 2701 Feb 11 02:04 numericalMethods.pyc
+-rw-rw-r-- 1 sayop sayop 2105 Feb 10 21:48 post.py
+-rw-rw-r-- 1 sayop sayop 2791 Feb 10 21:56 post.pyc
+</pre></div>
+</div>
+<p>To run the second simulation with point-iterative method, Jacobi, Gauss-Seidel and SOR for example, you also need to open the file named as <em>main.py</em> in /src/pr2/ directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ vi main.py
+</pre></div>
+</div>
+<p>First user specified-inputs you will see in this file are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># iSwitch for numerical method choice: 0-Jacobi, 1-Gauss-Seidel</span>
+<span class="n">iSwitch</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">iMultiGrid</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Here, <em>iSwitch</em> is supposed to define which method you want to use. <em>iSwitch=0</em> will allow you to use Jacobi. Or Set it to 1 to use Gauss-Seidel method and SOR method.</p>
+<p>Followings are used for iteration controls:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># maximum iterations</span>
+<span class="n">nIters</span> <span class="o">=</span> <span class="mi">99999</span>
+<span class="c"># if residual rate comes below this criterion, the iteration will stop!</span>
+<span class="n">convergeCrit</span> <span class="o">=</span> <span class="mf">0.001</span>
+</pre></div>
+</div>
+<p>Set <em>nIters</em> big enough such that your simulation can go over the convergence point. <em>convergeCrit</em> is set to 0.001 as requested in the problem.</p>
+<p>Followings are grid setup intpus:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># grid: i,j resolution</span>
+<span class="n">iDim</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">jDim</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="c"># x, y: spatial dimension of N^2 nodes</span>
+<span class="n">xmin</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">ymin</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">ymax</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>For the setup of SOR, you can specify <span class="math">\(\alpha\)</span> from the following line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Relaxation coefficient for SOR: applies to Jacobi and Gauss-Seidel</span>
+<span class="n">relaxCoeff</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -61,9 +158,18 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Code Instruction</a><ul>
+<li><a class="reference internal" href="#quick-instruction-for-problem-1">Quick instruction for problem 1</a></li>
+<li><a class="reference internal" href="#quick-instructions-for-problem-2">Quick instructions for problem 2</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../PrjDescription/contents.html"
-                        title="previous chapter">Project description</a></p>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to CFM First Project&#8217;s documentation!</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../Results/index.html"
                         title="next chapter">Results</a></p>
@@ -101,7 +207,7 @@
           <a href="../Results/index.html" title="Results"
              >next</a> |</li>
         <li class="right" >
-          <a href="../PrjDescription/contents.html" title="Project description"
+          <a href="../index.html" title="Welcome to CFM First Project’s documentation!"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">CFM First Project 0.0.1 documentation</a> &raquo;</li> 
       </ul>

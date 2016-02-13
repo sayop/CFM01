@@ -45,7 +45,7 @@ def prolongCoarseToFine(C,icmax,jcmax):
 
 def computeOnCoarseGrid(rMatF,Q,gammaF,errorF,imax,jmax,dx,dy,iSwitch,relaxCoeff):
    niters = 10
-   convergeCrit = 0.001
+   convergeCrit = 0.01
 
    # rMatF: residual matrix for fine grid
    # rMatC: residual matrix for coarse grid
@@ -59,14 +59,14 @@ def computeOnCoarseGrid(rMatF,Q,gammaF,errorF,imax,jmax,dx,dy,iSwitch,relaxCoeff
    # estimate the future step guess value for PHI.
    #errorC  = np.zeros((icmax,jcmax))
    # Initial guess of error matrix is given from the fine grid's error matrix and multiplied by 0.1 for under relaxing.
-   errorC = 0.1 * transferFineToCoarse(errorF,imax,jmax)
+   errorC = 0.5 * transferFineToCoarse(errorF,imax,jmax)
 
    if iSwitch == 0:
       print '|- Running Jacobi for updating error matrix in coarse grid...'
    elif iSwitch == 1:
       print '|- Running GS for updating error matrix in coarse grid...'
    for n in range(niters):
-      print '|-- Sub-iteration #', n+1, 'for coarse grid'
+      #print '|-- Sub-iteration #', n+1, 'for coarse grid'
       if n == 0: residualInit, dump = computeResidual(errorC, rMatC, gammaC, icmax, jcmax, 2.0*dx, 2.0*dy)
       if iSwitch == 0:
          errorC, deltaRMS = pointIterJacobi(errorC, rMatC, gammaC, icmax, jcmax, relaxCoeff, 2.0*dx, 2.0*dy)

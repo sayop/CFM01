@@ -53,9 +53,11 @@ residualTrace = []
 # exacsolution space
 exacT = findExactSolution(x, y, iDim, jDim)
 
+errorF = np.zeros((iDim,jDim))
+
 for niter in range(nIters):
 
-   errorF = exacT - T
+   #errorF = exacT - T
    #compute residual at initial state
    if niter == 0: residualInit, rMat = computeResidual(T, Sources, thermDiffusivity, iDim, jDim, dx, dy)
 

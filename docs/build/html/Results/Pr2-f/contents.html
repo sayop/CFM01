@@ -103,7 +103,9 @@
 <li>As observed in the previous section, the best performance was achieved with choice of <span class="math">\(\alpha\)</span> = 1.95 usign SOR method.</li>
 <li>The computational time is reduced almost by a factor of 25 from the worst case.</li>
 <li>This dramatical improvement is obtained even with slightly improved average error.</li>
-<li>All of the numerical method used here is esentially based on iterative method which is suppose to propagate the updated info to the final solution.</li>
+<li>All of the numerical method used here is esentially based on iterative method which is supposed to propagate the updated info to the final solution.</li>
+<li>For that reason, the over-relaxed increment of solution is actually aimed to promote the speed of infomation propagation such that it fastly reaches to the converged solution.</li>
+<li>However, exceesive promotion with greater value than <span class="math">\(\alpha\)</span> = 2 is likely to make over-shoot effect of increment that incudes divergence of the solution.</li>
 </ul>
 </li>
 </ul>
