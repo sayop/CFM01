@@ -55,11 +55,28 @@
   <div class="section" id="problem-2-d">
 <h1>Problem 2 - d<a class="headerlink" href="#problem-2-d" title="Permalink to this headline">¶</a></h1>
 <p>Compare average error for grids [10,10], [20,20], [40,40], [80,80].</p>
+<p>Here, the average error is defined as solution difference between numerical solution at final iteration and analytical solution:</p>
 <blockquote>
-<div><div class="figure">
+<div><div class="math">
+\[err = \frac{\sqrt{\sum_{i=1}^{N \times N}(\phi_i - \phi^{exac}_i)^2}}{N^2}\]</div>
+<div class="figure">
 <a class="reference internal image-reference" href="../../_images/errors.png"><img alt="../../_images/errors.png" src="../../_images/errors.png" style="width: 640.0px; height: 400.0px;" /></a>
 </div>
-<p><em>Average error according to different schemes</em></p>
+<ul class="simple">
+<li>Discussions<ul>
+<li>Here we see again the second order accuracy with changed of grid size. This is an outcome of central scheme finite difference method.</li>
+<li>Accuracy is improved by only decreasing grid size.</li>
+<li>Impact of numerical scheme on accuracy is NOT noticeable.</li>
+<li>The details of error quantity comparison shown below are showing slight improvement of accuracy with advanced schemes, SOR with higher relaxation coefficient for instance.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p><em>Average error according to different schemes</em></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="9%" />

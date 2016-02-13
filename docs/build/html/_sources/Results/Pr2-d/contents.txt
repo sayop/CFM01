@@ -3,9 +3,22 @@ Problem 2 - d
 
 Compare average error for grids [10,10], [20,20], [40,40], [80,80].
 
+Here, the average error is defined as solution difference between numerical solution at final iteration and analytical solution:
+
+  .. math::
+     err = \frac{\sqrt{\sum_{i=1}^{N \times N}(\phi_i - \phi^{exac}_i)^2}}{N^2}
+
   .. figure:: ./images/errors.png
      :scale: 80%
 
+  - Discussions
+
+    - Here we see again the second order accuracy with changed of grid size. This is an outcome of central scheme finite difference method.
+    - Accuracy is improved by only decreasing grid size. 
+    - Impact of numerical scheme on accuracy is NOT noticeable. 
+    - The details of error quantity comparison shown below are showing slight improvement of accuracy with advanced schemes, SOR with higher relaxation coefficient for instance.
+
+|
 
   *Average error according to different schemes*
 

@@ -54,6 +54,33 @@
             
   <div class="section" id="problem-2-a">
 <h1>Problem 2 - a<a class="headerlink" href="#problem-2-a" title="Permalink to this headline">¶</a></h1>
+<p>Given two-dimensional steady heat equation (Poisson&#8217;s equation:</p>
+<div class="math">
+\[\lambda\left ( \frac{\partial^2T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2}\right ) + Q = 0\]</div>
+<p><strong>Discretize</strong> the PDE using a central difference scheme to generate a matrix equation <span class="math">\([A]{T}={Q}\)</span>.</p>
+<p>Applying second order accuracy central scheme to each second derivative with respect to <span class="math">\(x\)</span> and <span class="math">\(y\)</span> gives</p>
+<div class="math">
+\[\lambda\left [ \frac{T_{i-1,j}-2T_{i,j}+T_{i+1,j}}{\Delta x^2} + \frac{T_{i,j-1} - 2T_{i,j} + 2T_{i,j+1}}{\Delta y^2} \right ] + Q_{i,j} = 0\]</div>
+<p>To construct the coefficient matrix of system of linear equations, the coefficients of each neighbor point should be organized as shown below:</p>
+<div class="math">
+\[a_{i-1,j}T_{i-1,j} + a_{i+1,j}T_{i+1,j} + a_{i,j-1}T_{i,j-1} + a_{i,j+1}T_{i,j+1} = Q_{i,j}\]</div>
+<p>where each coefficietns are recast in terms of diffusivity and grid size:</p>
+<div class="math">
+\[a_{L} = a_{R} = \frac{\lambda}{\Delta x^2}\]</div>
+<div class="math">
+\[a_{B} = a_{U} =  \frac{\lambda}{\Delta y^2}\]</div>
+<p>and</p>
+<div class="math">
+\[a_{i,j} = -\left ( \frac{2\lambda}{\Delta x^2} + \frac{2\lambda}{\Delta y^2} \right )\]</div>
+<p>Here, <span class="math">\(L\)</span>, <span class="math">\(R\)</span>, <span class="math">\(B\)</span>, and <span class="math">\(U\)</span> indicate &#8216;Left&#8217;, &#8216;Right&#8217;, &#8216;Bottom&#8217; and &#8216;Up&#8217; neighbors, respectively.</p>
+<p>The coefficients based on a single point <span class="math">\((i,j)\)</span> will compose <span class="math">\(i\times j\)</span>-th row.</p>
+<div class="math">
+\[AT=Q\]</div>
+<p>where <span class="math">\(T\)</span> and <span class="math">\(Q\)</span> are vector having <span class="math">\(n^4\)</span> elements:</p>
+<div class="math">
+\[\begin{split}\begin{bmatrix} T_{1,1} &amp; T_{1,2} &amp; \cdots  &amp; T_{1,n} &amp; T_{2,1} &amp; \cdots  &amp; T_{2,n} &amp; \cdots &amp; T_{i,j} &amp; \cdots &amp; T_{n,n} \end{bmatrix}^{T}\end{split}\]</div>
+<div class="math">
+\[\begin{split}\begin{bmatrix} Q_{1,1} &amp; Q_{1,2} &amp; \cdots  &amp; Q_{1,n} &amp; Q_{2,1} &amp; \cdots  &amp; Q_{2,n} &amp; \cdots &amp; Q_{i,j} &amp; \cdots &amp; Q_{n,n} \end{bmatrix}^{T}\end{split}\]</div>
 </div>
 
 

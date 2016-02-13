@@ -59,12 +59,33 @@
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/convergeRate.png"><img alt="../../_images/convergeRate.png" src="../../_images/convergeRate.png" style="width: 640.0px; height: 400.0px;" /></a>
 </div>
+<ul class="simple">
+<li>Discussions<ul>
+<li>Using faster convergence scheme proves dramatical improvement of convergence performance.</li>
+<li>This is because the faster convergence scheme is basically supposed to propagate the infomation faster than Jacobi method, which is based on past level info use while updating the next time level.</li>
+<li>Relaxation coefficient in SOR method have an additional promotion in fast convergence.</li>
+</ul>
+</li>
+</ul>
 </div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <ul>
 <li><p class="first">Effect of relaxation factor on convergence performace</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/convergeRate_SOR.png"><img alt="../../_images/convergeRate_SOR.png" src="../../_images/convergeRate_SOR.png" style="width: 640.0px; height: 400.0px;" /></a>
 </div>
+<ul class="simple">
+<li>Discussions<ul>
+<li>Using higher value of relaxation factor improves substantial fast convergence.</li>
+<li>The relaxation factor cannot be used beyond 2. So recommended use of <span class="math">\(\alpha\)</span> for SOR is <span class="math">\(1 &lt; \alpha &lt; 2\)</span></li>
+<li><span class="math">\(\alpha &gt; 2\)</span> is giving an oscillated residual behavior and its mean value keeps consistent over repeated interation and it never ended.</li>
+<li>Even if it is converged, the use of <span class="math">\(\alpha\)</span> greater than 1.8 is also showing an unstable residual evolution in time.</li>
+<li>Best convergence performance was achieved with <span class="math">\(\alpha\)</span> = 1.9, because it ends at less than 100 iteration with current case setup.</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </div>

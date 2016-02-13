@@ -19,8 +19,8 @@ nIters = 99999
 convergeCrit = 0.001
 
 # grid: i,j resolution
-iDim = 20
-jDim = 20
+iDim = 40
+jDim = 40
 # x, y: spatial dimension of N^2 nodes
 xmin = 0.0
 xmax = 1.0
@@ -50,8 +50,8 @@ for niter in range(nIters):
    # go for point-iterations: will update new time level
    # first one runs for Jacobi method with relaxation coefficient.
    # second one runs for Jacobi method with relaxation coefficient.
-   #newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
-   newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   newT, deltaRMS = pointIterJacobi(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
+   #newT, deltaRMS = pointIterGS(T, Sources, thermDiffusivity, iDim, jDim, relaxCoeff, dx, dy)
    # compute residual for updated solution
    residual = computeResidual(newT, Sources, thermDiffusivity, iDim, jDim, dx, dy)   
    # check convergence rate:
